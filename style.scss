@@ -1,0 +1,294 @@
+$lightorange: #F38630;
+$strongorange: #FA6900;	
+$colorbasic: #E0E4CC;
+$lightblue: #A7DBD8;
+$blue: #69D2E7;
+
+.main {
+	background-color: #E0E4CC;
+	color: #000;
+}
+
+ul {
+  	list-style: none;
+  	padding: 0;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: #A7DBD8;
+
+	.logo {
+		padding: 10px 50px;
+
+		img {
+			height: 40px;
+		}
+	}
+
+	.menu {
+
+		ul {
+
+			ul {
+				li {
+					display: flex;
+				}	
+			}
+
+			li {
+				display: inline-flex;
+				justify-content: space-between;	
+				min-width: 150px;
+
+				&:hover {
+
+					ul {
+				 	visibility:visible;
+				  	transform:scaleY(1);
+				  	transition-duration: 0.25s;
+				  	z-index: 1;
+					}
+				}
+
+				a {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					line-height: 50px;
+					color: #FFFFFF;
+					background-color: $strongorange;	
+					text-decoration: none;
+					width: 100%;
+
+					&:hover {
+						background-color: $lightorange;							
+					}
+				}
+
+				ul {
+					visibility:hidden;
+				  	transform:scaleY(0);
+				  	transform-origin:50% 0;
+				  	transition:100ms;
+				  	position:absolute;
+				  	margin-top: 50px;
+				  	transition-duration: 0.25s;
+				}
+			}
+		}
+
+	}
+}
+
+.sectioncarousel {
+	padding-top: 100px;
+}
+
+
+.header-text {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    font-size:50px; 
+    color:#fff;
+}
+
+.container {
+	display: flex;
+	text-align: center;
+   	align-items: center;
+   	justify-content: center;
+   	flex-direction: row;
+   	flex-wrap: wrap;
+   	flex-flow: row wrap;
+   	align-content: flex-end;
+   	padding: 75px 10%;
+}
+
+.sectionbox {
+	@extend .container;
+	.box {
+	  	min-width: 280px;
+	  	max-width: 280px;
+	  	height: auto;
+	  	background-color: #FFF;
+	  	position: relative;
+	  	border: 3px solid transparent;
+		flex: 1 0 20%; 
+		margin: 15px;
+
+		h3 {
+			color: #000;
+		    text-align: center;
+		}
+
+		p {
+			color: #000000;
+			font-size: 26px;
+		}
+
+		button {
+			width: 90px;
+			height: 30px;
+		}
+	}
+}
+
+
+.line {
+	width: 50px; 
+	height: 3px;
+}
+
+.topline {						/* top line bgcolor */
+	background-color: #E0E4CC;	
+}
+
+.element1 {						/* bgcolor for elements from div 1 */
+	background-color: $blue;
+}
+
+.element2 {						/* bgcolor for elements from div 2 */ 
+	background-color: $lightorange;
+}
+
+.element3 {						/* bgcolor for elements from div 3 */ 
+	background-color: $lightblue;
+}
+
+.element4 {						/* bgcolor for elements from div 4 */ 
+	background-color: $strongorange;
+}
+
+.basebutton {
+	transition: 0.75s;
+	margin-bottom: 10px;
+	align-self: center;
+
+	&:hover {
+		transform: scale(1.10);
+		transition: 0.5s;
+		cursor: pointer;
+	}
+}
+
+.a1 {
+	color: $blue;
+}
+
+.a2 {
+	color: $lightorange;
+}
+
+.a3 {
+	color: $lightblue;
+}
+
+.a4 {
+	color: $strongorange;
+}
+
+.product {
+  	visibility: hidden;
+  	position: absolute;
+	margin-left: -3px;
+
+	ul {
+
+		li { 
+			text-align: left;	
+			padding: 5px;
+
+			&:before {
+				content: "";
+				width: 5px;
+				height: 10px;
+				border-right: 1px solid #000;
+				border-bottom: 1px solid #000;
+				transform: rotate(45deg);
+				position: absolute;
+				left: 30px;
+			}
+		}
+	}
+}
+
+.fontbasecolor {		/* base font color */
+	color: #FFF;
+}
+
+.noborder {				/* no border for buttons and lines*/
+	border: none;	
+}
+
+
+
+.box {
+	&:hover {
+	  	border-color: $strongorange;
+
+	  	.product {	
+			visibility: visible;
+		  	display: flex;
+		  	flex-direction: column;
+		  	z-index: 1;
+		  	min-width: inherit;
+		  	max-width: inherit;
+		  	background-color: inherit;
+			border: 3px solid $strongorange;
+			border-top: none;
+		}
+	} 
+}
+
+.beforefooter {
+	justify-content: space-between;
+	background-color: $lightorange;
+	@extend .container;
+	.column {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		align-self: flex-start;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			padding-top: 5px;
+		}
+
+		.columndivicons {
+
+			.columnbutton {
+				width: 40px;
+				height: 40px;
+				font-size: 22px;
+				border: none;
+				cursor: pointer;
+			}
+		}
+	}      	
+}
+
+.footer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	background-color: $strongorange;
+	text-align: center;
+	left: 0;
+	right: 0;
+
+	p {
+		padding: 15px 30px;
+	}
+}
