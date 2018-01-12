@@ -18,7 +18,10 @@ ul {
   z-index: 999;
   background-color: #A7DBD8; }
   .header .logo {
-    padding: 10px 50px; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 25px; }
     .header .logo img {
       height: 40px; }
   .header .menu ul ul li {
@@ -59,7 +62,6 @@ ul {
   position: absolute;
   top: 35%;
   width: 100%;
-  font-size: 50px;
   color: #fff; }
 
 .container, .sectionbox, .beforefooter {
@@ -80,8 +82,20 @@ ul {
   background-color: #FFF;
   position: relative;
   border: 3px solid transparent;
-  flex: 1 0 20%;
+  flex: 1;
   margin: 15px; }
+  .sectionbox .box:hover {
+    border-color: #FA6900; }
+    .sectionbox .box:hover .product {
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      min-width: inherit;
+      max-width: inherit;
+      background-color: inherit;
+      border: 3px solid #FA6900;
+      border-top: none; }
   .sectionbox .box h3 {
     color: #000;
     text-align: center; }
@@ -162,19 +176,6 @@ ul {
   /* no border for buttons and lines*/
   border: none; }
 
-.box:hover {
-  border-color: #FA6900; }
-  .box:hover .product {
-    visibility: visible;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    min-width: inherit;
-    max-width: inherit;
-    background-color: inherit;
-    border: 3px solid #FA6900;
-    border-top: none; }
-
 .beforefooter {
   justify-content: space-between;
   background-color: #F38630; }
@@ -184,9 +185,12 @@ ul {
     align-items: flex-start;
     align-self: flex-start; }
     .beforefooter .column a {
+      font-size: 16px;
       text-decoration: none;
       color: inherit;
       padding-top: 5px; }
+    .beforefooter .column h3 {
+      font-size: 26px; }
     .beforefooter .column .columndivicons .columnbutton {
       width: 40px;
       height: 40px;
@@ -199,10 +203,52 @@ ul {
   display: flex;
   justify-content: flex-end;
   background-color: #FA6900;
-  text-align: center;
   left: 0;
-  right: 0; }
+  right: 0;
+  padding: 20px; }
   .footer p {
-    padding: 15px 30px; }
+    font-size: 18px;
+    padding-right: 30px; }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .header .logo {
+    padding-left: 15px; }
+    .header .logo img {
+      height: 30px; }
+  .header .menu ul li {
+    min-width: 125px; }
+
+  .container, .sectionbox, .beforefooter {
+    padding: 50px 5%; }
+
+  .sectionbox .box {
+    margin: 10px; }
+
+  .beforefooter .column a {
+    font-size: 14px;
+    padding-top: 0; }
+  .beforefooter .column h3 {
+    font-size: 22px; } }
+@media (max-width: 767px) {
+  .header .logo {
+    padding-left: 5px; }
+    .header .logo img {
+      height: 20px; }
+  .header .menu ul li {
+    display: inline-flex;
+    justify-content: space-between;
+    min-width: 85px; }
+
+  .container, .sectionbox, .beforefooter {
+    padding: 20px 2%; }
+
+  .sectionbox .box {
+    margin: 5px; }
+
+  .beforefooter .column a {
+    font-size: 13px;
+    padding-top: 0; }
+  .beforefooter .column h3 {
+    font-size: 18px; } }
 
 /*# sourceMappingURL=style.css.map */

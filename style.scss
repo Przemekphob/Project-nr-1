@@ -27,7 +27,10 @@ ul {
 	background-color: #A7DBD8;
 
 	.logo {
-		padding: 10px 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 25px;
 
 		img {
 			height: 40px;
@@ -98,8 +101,8 @@ ul {
     position: absolute;
     top: 35%;
     width: 100%;
-    font-size:50px; 
     color:#fff;
+
 }
 
 .container {
@@ -116,6 +119,7 @@ ul {
 
 .sectionbox {
 	@extend .container;
+
 	.box {
 	  	min-width: 280px;
 	  	max-width: 280px;
@@ -123,8 +127,24 @@ ul {
 	  	background-color: #FFF;
 	  	position: relative;
 	  	border: 3px solid transparent;
-		flex: 1 0 20%; 
+		flex: 1; 
 		margin: 15px;
+
+		&:hover {
+	  	border-color: $strongorange;
+
+	  	.product {	
+			visibility: visible;
+		  	display: flex;
+		  	flex-direction: column;
+		  	z-index: 1;
+		  	min-width: inherit;
+		  	max-width: inherit;
+		  	background-color: inherit;
+			border: 3px solid $strongorange;
+			border-top: none;
+		}
+	} 
 
 		h3 {
 			color: #000;
@@ -142,6 +162,7 @@ ul {
 		}
 	}
 }
+
 
 
 .line {
@@ -230,30 +251,11 @@ ul {
 	border: none;	
 }
 
-
-
-.box {
-	&:hover {
-	  	border-color: $strongorange;
-
-	  	.product {	
-			visibility: visible;
-		  	display: flex;
-		  	flex-direction: column;
-		  	z-index: 1;
-		  	min-width: inherit;
-		  	max-width: inherit;
-		  	background-color: inherit;
-			border: 3px solid $strongorange;
-			border-top: none;
-		}
-	} 
-}
-
 .beforefooter {
 	justify-content: space-between;
 	background-color: $lightorange;
 	@extend .container;
+
 	.column {
 		display: flex;
 		flex-direction: column;
@@ -261,9 +263,14 @@ ul {
 		align-self: flex-start;
 
 		a {
+			font-size: 16px;
 			text-decoration: none;
 			color: inherit;
 			padding-top: 5px;
+		}
+
+		h3 {
+			font-size: 26px;
 		}
 
 		.columndivicons {
@@ -284,11 +291,119 @@ ul {
 	display: flex;
 	justify-content: flex-end;
 	background-color: $strongorange;
-	text-align: center;
 	left: 0;
 	right: 0;
+	padding: 20px;
 
-	p {
-		padding: 15px 30px;
+		p {
+			font-size: 18px;
+			padding-right: 30px;
+		}
+	
+}
+
+@media(min-width: 768px) and (max-width: 1199px) { 
+
+	.header {
+		.logo {
+			padding-left: 15px;
+
+			img {
+				height: 30px;
+			}
+		}
+
+		.menu {
+
+			ul {
+				li {
+					min-width: 125px;
+				}
+			}
+
+		}
 	}
+
+	.container {
+	   	padding: 50px 5%;
+	}
+
+	.sectionbox {
+		
+		.box {
+
+			margin: 10px;
+		}
+	}
+
+	.beforefooter {
+		.column {
+
+			a {
+				font-size: 14px;
+				padding-top: 0;
+			}
+
+		h3 {
+			font-size: 22px;
+		}
+
+		}      	
+	}
+
+}
+
+@media(max-width: 767px) { 
+
+	.header {
+
+		.logo {
+			padding-left: 5px;
+
+			img {
+				height: 20px;
+			}
+		}
+
+		.menu {
+
+			ul {
+
+				li {
+					display: inline-flex;
+					justify-content: space-between;	
+					min-width: 85px;
+				}
+			}
+
+		}
+	}
+
+	.container {
+	   	padding: 20px 2%;
+	}
+
+	.sectionbox {
+		
+		.box {
+
+			margin: 5px;
+		}
+	}
+
+	.beforefooter {
+		.column {
+			
+			a {
+				font-size: 13px;
+				padding-top: 0;
+			}
+
+		h3 {
+			font-size: 18px;
+		}
+
+		}      	
+	}
+
 }
